@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, Input, InputSignal } from '@angular/core';
+import { Monster } from '../../models/monster.models';
 
 @Component({
   selector: 'app-playing-card',
@@ -7,10 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './playing-card.component.css'
 })
 export class PlayingCardComponent {
-  name:string = "My monster2";
-  hp: number =40;
-  figureCaption: String = "N 001";
-  attackname: string = "Geo Impact";
-  attackForce:number = 60;
-  attackDescription: string = "This a logn description"
+  monster:InputSignal<Monster> = input(new Monster());
 }
